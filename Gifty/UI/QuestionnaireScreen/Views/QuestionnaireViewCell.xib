@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestionnaireViewCell" rowHeight="70" id="TDg-8e-y8z" customClass="QuestionnaireViewCell" customModule="Gifty" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="402" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TDg-8e-y8z" id="l6y-UE-pBg">
+                <rect key="frame" x="0.0" y="0.0" width="402" height="70"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYX-H2-jtd">
+                        <rect key="frame" x="34" y="25" width="44" height="20"/>
+                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pdE-YJ-q9Y">
+                        <rect key="frame" x="350" y="25" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="N7B-7X-qvn"/>
+                            <constraint firstAttribute="height" constant="24" id="cqV-11-awZ"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="pdE-YJ-q9Y" secondAttribute="trailing" constant="28" id="FMe-sx-cfQ"/>
+                    <constraint firstAttribute="bottom" secondItem="pdE-YJ-q9Y" secondAttribute="bottom" constant="25" id="cZP-1r-ioX"/>
+                    <constraint firstItem="JYX-H2-jtd" firstAttribute="top" secondItem="l6y-UE-pBg" secondAttribute="top" constant="25" id="k51-yw-eSE"/>
+                    <constraint firstAttribute="bottom" secondItem="JYX-H2-jtd" secondAttribute="bottom" constant="25" id="wnJ-LM-x84"/>
+                    <constraint firstItem="JYX-H2-jtd" firstAttribute="leading" secondItem="l6y-UE-pBg" secondAttribute="leading" constant="34" id="xcf-PO-X7A"/>
+                    <constraint firstItem="pdE-YJ-q9Y" firstAttribute="top" secondItem="l6y-UE-pBg" secondAttribute="top" constant="25" id="zDW-iD-U5p"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="answerIcon" destination="pdE-YJ-q9Y" id="T2f-jf-DqR"/>
+                <outlet property="answerLabel" destination="JYX-H2-jtd" id="eJO-XS-aLG"/>
+            </connections>
+            <point key="canvasLocation" x="305.79710144927537" y="36.830357142857139"/>
+        </tableViewCell>
+    </objects>
+</document>
