@@ -58,6 +58,8 @@ class ProfileViewController: UIViewController {
         } else {
             listOfReceiversTableView.isHidden = false
         }
+        
+        QuestionsManager.shared.resetQuestionsManager()
     }
     
     // MARK: - Actions
@@ -73,7 +75,13 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("User selected")
+        tableView.deselectRow(at: indexPath, animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "ListOfGiftsViewController") as? ListOfGiftsViewController else { return }
+        if let selectedUserCD = fetchedResultsController.fetchedObjects?[indexPath.row] {
+            viewController.gifts = GiftDataManager().getGiftsForActivity(activityName: selectedUserCD.preferActivity ?? "")
+        }
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

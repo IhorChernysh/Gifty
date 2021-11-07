@@ -1,15 +1,12 @@
-//
-//  Gift.swift
-//  Gifty
-//
-//  Created by Oleksii Vasyliev on 01.11.2021.
-//
-//
-
 import Foundation
 
-enum Categories {
-    case sports, travel, culture, music, food, drink
+enum Categories: String {
+    case sports = "Sports"
+    case travel = "Travel"
+    case culture = "Culture, Arts, and Literature"
+    case music = "Music"
+    case food = "Food"
+    case drink = "Drink"
 }
 
 struct Gift {
@@ -20,5 +17,5 @@ struct Gift {
     var price: String
     var picture: String
     var shortDescription: String
-    var longDescription: String
+    var longDescription: NSMutableAttributedString
 }

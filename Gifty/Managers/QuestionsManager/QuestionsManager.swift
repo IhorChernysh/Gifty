@@ -35,7 +35,7 @@ class QuestionsManager {
     
     private(set) var questions: [Question] = []
     private(set) var userAnswer = UserAnswer()
-    
+
     private(set) var currentQuestionNumber: QuestionNumber = .one
     
     private(set) var currentUser = User()

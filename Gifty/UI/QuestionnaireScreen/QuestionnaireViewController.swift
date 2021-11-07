@@ -37,19 +37,16 @@ class QuestionnaireViewController: UIViewController {
     }
     
     @objc func nextPressed() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if questionsManager.currentQuestionIsLast() {
             questionsManager.saveUserInfoAndActivity()
-            questionsManager.resetQuestionsManager()
-            let vc = UIViewController()
-            let closeImage = UIImage(named: "closeButton")
-            vc.view.backgroundColor = .white
-            vc.navigationItem.leftBarButtonItem = UIBarButtonItem(image: closeImage, style: .plain, target: self, action: #selector(goToWelcomeScreen))
-            navigationController?.pushViewController(vc, animated: true)
+            guard let viewController = storyboard.instantiateViewController(withIdentifier: "ListOfGiftsViewController") as? ListOfGiftsViewController else { return }
+            viewController.gifts = GiftDataManager().getGiftsForActivity(activityName: questionsManager.currentUser.preferActivity ?? "")
+            navigationController?.pushViewController(viewController, animated: true)
             return
         }
         
         questionsManager.setNextQuestion()
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let viewController = storyboard.instantiateViewController(withIdentifier: "QuestionnaireViewController") as? QuestionnaireViewController else { return }
         navigationController?.pushViewController(viewController, animated: true)
     }
